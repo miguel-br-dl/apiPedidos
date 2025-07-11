@@ -34,11 +34,28 @@ jobs:
       steps:
          - name: Checkout do código
            uses: actions/checkout@v2
+         - name: Configuração do JDK 21
+           uses: actions/setup-java@v2
+           with:
+              java-version: "21"
+              distribution: "temurin"
+         - name: Rodar testes com cobertura JaCoCo
+           run: mvn clean test
+         - name: Upload dos relatórios de testes (Surefire)
+           uses: actions/upload-artifact@v4
+           with:
+              name: surefire-reports
+              path: target/surefire-reports/
+         - name: Upload dos relatórios de cobertura (JaCoCo)
+           uses: actions/upload-artifact@v4
+           with:
+                name: jacoco-report
+                path: target/site/jacoco/
    deploy:
        name: Publicação
        runs-on: ubuntu-22.04
        needs: test
-       steps:          
+       steps:
           - name: Checkout code
             uses: actions/checkout@v2
 
