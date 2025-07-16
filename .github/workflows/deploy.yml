@@ -40,7 +40,7 @@ jobs:
               java-version: "21"
               distribution: "temurin"
          - name: Rodar testes com cobertura JaCoCo
-           run: mvn clean test
+           run: mvn clean test -fn
          - name: Upload dos relatórios de testes (Surefire)
            uses: actions/upload-artifact@v4
            with:
