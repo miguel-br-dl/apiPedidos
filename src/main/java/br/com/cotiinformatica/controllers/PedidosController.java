@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.cotiinformatica.domain.models.PedidoRequestModel;
 import br.com.cotiinformatica.domain.models.PedidoResponseModel;
 import br.com.cotiinformatica.domain.services.interfaces.PedidoService;
-import br.com.cotiinformatica.infrastructure.repositories.PedidoRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;

@@ -13,11 +13,12 @@ services:
        - rabbitmq # Nome do serviço que precisamos aguardar para executar a API
    environment:
        SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/pedidosdb
+       SPRING_RABBITMQ_HOST: rabbitmq
  postgres: # Nome do serviço
    image: postgres:16 # Imagem oficial do postgresql versão 16
    container_name: postgres-apiPedidos # Nome do container
    restart: always # Sempre reiniciar o servidor
-   environment:
+   environment: 
      POSTGRES_DB: pedidosdb # Nome do banco de dados
      POSTGRES_USER: pedidosuser # Usuário do banco de dados
      POSTGRES_PASSWORD: pedidospassword # Senha do usuário
