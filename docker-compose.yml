@@ -42,7 +42,7 @@ services:
      - apiPedidos-network # Nome da rede compartilhada
 networks:
  apiPedidos-network: # Nome da rede
-   driver: bridge # Rede compartilhada
+   external: true # Rede deve ser criada antes pelo docker
 volumes:
  postgres-data: #Registrando o local para armazenamento dos dados
 
